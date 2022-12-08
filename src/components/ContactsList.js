@@ -1,7 +1,11 @@
-export const ContactsList = name => {
+export const ContactsList = ({ items }) => {
   return (
-    <div>
-      <p>{name}</p>
-    </div>
+    <ul>
+      {items.map((item, idx) => (
+        <li key={idx}>
+          <p>{item}</p>
+        </li>
+      ))}
+    </ul>
   );
 };

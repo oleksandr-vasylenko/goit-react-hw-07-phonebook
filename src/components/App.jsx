@@ -1,5 +1,5 @@
-import { nanoid } from 'nanoid';
 import { Component } from 'react';
+import { nanoid } from 'nanoid';
 import { ContactsForm } from './ContactsForm';
 import { ContactsList } from './ContactsList';
 
