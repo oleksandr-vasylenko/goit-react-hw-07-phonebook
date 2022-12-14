@@ -17,6 +17,7 @@ export class App extends Component {
 
   render() {
     const { contacts } = this.state;
+
     return (
       <>
         <ContactsForm onSubmit={this.addContact} />
