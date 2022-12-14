@@ -1,12 +1,12 @@
-export const ContactsForm = ({ onAdd }) => {
-  const handleAdd = event => {
+export const ContactsForm = ({ onSubmit }) => {
+  const handleSubmit = event => {
     event.preventDefault();
-    const { name } = event.target.elements;
-    onAdd(name.value);
+    // const { contactName } = event.target.elements.name;
+    onSubmit(event.target.elements.name.value); // it is necessary to figure out, why I wasnt' abel to desctr. this
   };
 
   return (
-    <form onSubmit={handleAdd}>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         name="name"

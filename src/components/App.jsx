@@ -4,18 +4,14 @@ import { ContactsForm } from './ContactsForm';
 import { ContactsList } from './ContactsList';
 
 export class App extends Component {
-  // static defaultProps = {
-  //   initialContacts: [],
-  // };
-
   state = {
     contacts: [],
     name: '',
   };
 
-  addContact = name => {
+  addContact = contactName => {
     this.setState(prevState => ({
-      contacts: [...prevState.contacts, { id: nanoid(), name }],
+      contacts: [...prevState.contacts, { contactName, id: nanoid() }],
     }));
   };
 
@@ -23,8 +19,8 @@ export class App extends Component {
     const { contacts } = this.state;
     return (
       <>
-        <ContactsForm onAdd={this.addContact}></ContactsForm>
-        <ContactsList items={contacts}></ContactsList>
+        <ContactsForm onSubmit={this.addContact}></ContactsForm>
+        {contacts.length > 0 && <ContactsList items={contacts}></ContactsList>}
       </>
     );
   }
