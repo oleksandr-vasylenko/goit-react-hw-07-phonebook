@@ -6,7 +6,7 @@ export const ContactsForm = ({ onAdd }) => {
   };
 
   return (
-    <ContactsForm onSubmit={handleAdd}>
+    <form onSubmit={handleAdd}>
       <input
         type="text"
         name="name"
@@ -15,6 +15,6 @@ export const ContactsForm = ({ onAdd }) => {
         required
       />
       <button>Add</button>
-    </ContactsForm>
+    </form>
   );
 };
