@@ -14,7 +14,7 @@ export const ContactsForm = ({ onSubmit }) => {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-      <button>Add</button>
+      <button>Add Contact</button>
     </form>
   );
 };
