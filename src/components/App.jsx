@@ -9,9 +9,9 @@ export class App extends Component {
     name: '',
   };
 
-  addContact = contactName => {
+  addContact = name => {
     this.setState(prevState => ({
-      contacts: [...prevState.contacts, { contactName, id: nanoid() }],
+      contacts: [...prevState.contacts, { id: nanoid(), name }],
     }));
   };
 
@@ -19,8 +19,8 @@ export class App extends Component {
     const { contacts } = this.state;
     return (
       <>
-        <ContactsForm onSubmit={this.addContact}></ContactsForm>
-        {contacts.length > 0 && <ContactsList items={contacts}></ContactsList>}
+        <ContactsForm onSubmit={this.addContact} />
+        {contacts.length > 0 && <ContactsList items={contacts} />}
       </>
     );
   }
