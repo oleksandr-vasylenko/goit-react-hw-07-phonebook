@@ -10,6 +10,9 @@ export class App extends Component {
   };
 
   addContact = name => {
+    console.log(name);
+    console.log(this.state.contacts);
+
     this.setState(prevState => ({
       contacts: [...prevState.contacts, { id: nanoid(), name }],
     }));
