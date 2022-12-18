@@ -23,9 +23,8 @@ export class App extends Component {
     }));
   };
 
-  typeContact = e => {
-    const { value } = e.currentTarget;
-    this.setState({ filter: value });
+  typeFilter = e => {
+    this.setState({ filter: e.currentTarget.value });
   };
 
   getfilteredContacts = () => {
@@ -36,14 +35,15 @@ export class App extends Component {
   };
 
   render() {
-    const { contacts } = this.state;
     const filteredContacts = this.getfilteredContacts();
     return (
       <>
         <p>Phonebook</p>
         <ContactsForm onSubmit={this.addContact} />
-        <Filter onType={this.typeContact} />
-        {contacts.length > 0 && <ContactsList items={filteredContacts} />}
+        <Filter onType={this.typeFilter} />
+        {this.state.contacts.length > 0 && (
+          <ContactsList items={filteredContacts} />
+        )}
       </>
     );
   }
