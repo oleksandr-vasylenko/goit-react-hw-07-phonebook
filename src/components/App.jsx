@@ -28,21 +28,21 @@ export class App extends Component {
   };
 
   getfilteredContacts = () => {
-    const typeNormalizer = this.state.filter.toLocaleLowerCase();
     return this.state.contacts.filter(contact => {
-      return contact.name.toLowerCase().includes(typeNormalizer);
+      return contact.name
+        .toLowerCase()
+        .includes(this.state.filter.toLocaleLowerCase());
     });
   };
 
   render() {
-    const filteredContacts = this.getfilteredContacts();
     return (
       <>
         <p>Phonebook</p>
         <ContactsForm onSubmit={this.addContact} />
         <Filter onType={this.typeFilter} />
         {this.state.contacts.length > 0 && (
-          <ContactsList items={filteredContacts} />
+          <ContactsList items={this.getfilteredContacts()} />
         )}
       </>
     );
