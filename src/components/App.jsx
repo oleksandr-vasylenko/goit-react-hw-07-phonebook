@@ -13,8 +13,6 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
   addContact = (name, number) => {
@@ -38,8 +36,10 @@ export class App extends Component {
   render() {
     return (
       <>
-        <p>Phonebook</p>
+        <h1>Phonebook</h1>
         <ContactsForm onSubmit={this.addContact} />
+
+        <h2>Contacts</h2>
         <Filter onType={this.typeFilter} />
         {this.state.contacts.length > 0 && (
           <ContactsList items={this.getfilteredContacts()} />
