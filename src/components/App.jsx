@@ -23,17 +23,27 @@ export class App extends Component {
     }));
   };
 
-  filterContacts = (name, number) => {};
+  typeContact = e => {
+    const { value } = e.currentTarget;
+    this.setState({ filter: value });
+  };
+
+  getfilteredContacts = () => {
+    const typeNormalizer = this.state.filter.toLocaleLowerCase();
+    return this.state.contacts.filter(contact => {
+      return contact.name.toLowerCase().includes(typeNormalizer);
+    });
+  };
 
   render() {
     const { contacts } = this.state;
-
+    const filteredContacts = this.getfilteredContacts();
     return (
       <>
         <p>Phonebook</p>
         <ContactsForm onSubmit={this.addContact} />
-        <Filter onChange={this.filterContacts} />
-        {contacts.length > 0 && <ContactsList items={contacts} />}
+        <Filter onType={this.typeContact} />
+        {contacts.length > 0 && <ContactsList items={filteredContacts} />}
       </>
     );
   }

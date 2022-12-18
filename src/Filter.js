@@ -1,16 +1,8 @@
-export const Filter = () => {
+export const Filter = ({ onType, value }) => {
   return (
     <>
       <p>Find contact by name</p>
-      <ul>
-        <input
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        />
-      </ul>
+      <input type="text" onChange={onType} value={value} />
     </>
   );
 };
