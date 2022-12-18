@@ -8,10 +8,13 @@ export class ContactsForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(
-      e.target.elements.name.value,
-      e.target.elements.number.value
-    );
+
+    this.props.items.find(item => item.name === e.target.elements.name.value)
+      ? alert(`${e.target.elements.name.value} is already in contacts`)
+      : this.props.onSubmit(
+          e.target.elements.name.value,
+          e.target.elements.number.value
+        );
   };
 
   render() {

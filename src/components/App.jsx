@@ -37,7 +37,10 @@ export class App extends Component {
     return (
       <>
         <h1>Phonebook</h1>
-        <ContactsForm onSubmit={this.addContact} />
+        <ContactsForm
+          onSubmit={this.addContact}
+          items={this.getfilteredContacts()}
+        />
 
         <h2>Contacts</h2>
         <Filter onType={this.typeFilter} />
