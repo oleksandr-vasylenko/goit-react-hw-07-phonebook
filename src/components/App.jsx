@@ -7,12 +7,10 @@ export class App extends Component {
   state = {
     contacts: [],
     name: '',
+    number: '',
   };
 
   addContact = name => {
-    console.log(name);
-    console.log(this.state.contacts);
-
     this.setState(prevState => ({
       contacts: [...prevState.contacts, { id: nanoid(), name }],
     }));
@@ -23,6 +21,7 @@ export class App extends Component {
 
     return (
       <>
+        <p>Phonebook</p>
         <ContactsForm onSubmit={this.addContact} />
         {contacts.length > 0 && <ContactsList items={contacts} />}
       </>
