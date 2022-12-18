@@ -1,8 +1,11 @@
 export const ContactsForm = ({ onSubmit }) => {
   const handleSubmit = event => {
     event.preventDefault();
-    // const { contactName } = event.target.elements.name;
-    onSubmit(event.target.elements.name.value); // it is necessary to figure out, why I wasnt' abel to desctr. this
+    // const { contactName } = event.target.elements;
+    onSubmit(
+      event.target.elements.name.value,
+      event.target.elements.number.value
+    ); // it is necessary to figure out, why I wasnt' abel to desctr. this
   };
 
   return (
