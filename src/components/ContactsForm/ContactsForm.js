@@ -1,4 +1,9 @@
 import { Component } from 'react';
+import {
+  AddContactForm,
+  InputField,
+  AddContactButton,
+} from './ContactsForm.Styled';
 
 export class ContactsForm extends Component {
   state = {
@@ -19,8 +24,8 @@ export class ContactsForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
+      <AddContactForm onSubmit={this.handleSubmit}>
+        <InputField
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -28,7 +33,7 @@ export class ContactsForm extends Component {
           required
         />
 
-        <input
+        <InputField
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -36,8 +41,8 @@ export class ContactsForm extends Component {
           required
         />
 
-        <button>Add Contact</button>
-      </form>
+        <AddContactButton>Add Contact</AddContactButton>
+      </AddContactForm>
     );
   }
 }

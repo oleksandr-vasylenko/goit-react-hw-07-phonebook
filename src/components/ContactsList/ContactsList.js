@@ -1,8 +1,9 @@
 import { Contact } from '../Contacts/Contact';
+import { ContactsThumb } from './ContactsList.Styled';
 
 export const ContactsList = ({ items, onDelete }) => {
   return (
-    <ul>
+    <ContactsThumb>
       {items.map(item => (
         <Contact
           name={item.name}
@@ -11,6 +12,6 @@ export const ContactsList = ({ items, onDelete }) => {
           onDelete={onDelete}
         />
       ))}
-    </ul>
+    </ContactsThumb>
   );
 };

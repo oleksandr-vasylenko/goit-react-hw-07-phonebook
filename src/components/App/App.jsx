@@ -1,9 +1,10 @@
-import { GlobalStyle } from '../GlobalStyle';
+import { GlobalStyle } from '../../GlobalStyle';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { ContactsForm } from './ContactsForm/ContactsForm';
-import { ContactsList } from './ContactsList/ContactsList';
+import { ContactsForm } from '../ContactsForm/ContactsForm';
+import { ContactsList } from '../ContactsList/ContactsList';
 import { Filter } from 'components/Filter/Filter';
+import { Thumb } from './App.Styled';
 
 export class App extends Component {
   state = {
@@ -42,7 +43,7 @@ export class App extends Component {
 
   render() {
     return (
-      <>
+      <Thumb>
         <h1>Phonebook</h1>
         <ContactsForm
           onSubmit={this.addContact}
@@ -58,7 +59,7 @@ export class App extends Component {
           />
         )}
         <GlobalStyle />
-      </>
+      </Thumb>
     );
   }
 }

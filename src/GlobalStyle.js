@@ -11,8 +11,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  padding: 16px;
-background-color: #e7ecf2;
+  padding: 24px;
+
+  background: rgb(251,241,254);
+  background: linear-gradient(90deg, rgba(251,241,254,1) 50%, rgba(250,237,241,1) 100%);
+
   
 }
 
