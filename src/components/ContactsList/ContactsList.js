@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Contact } from '../Contacts/Contact';
 import { ContactsThumb } from './ContactsList.Styled';
 
-export const ContactsList = ({ items, onDelete }) => {
+export const ContactsList = ({ items, onDelete, id }) => {
   return (
     <ContactsThumb>
       {items.map(item => (
@@ -11,6 +11,7 @@ export const ContactsList = ({ items, onDelete }) => {
           number={item.number}
           id={item.id}
           onDelete={onDelete}
+          key={item.id}
         />
       ))}
     </ContactsThumb>
