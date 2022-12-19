@@ -1,3 +1,4 @@
+import { GlobalStyle } from '../GlobalStyle';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { ContactsForm } from './ContactsForm/ContactsForm';
@@ -56,6 +57,7 @@ export class App extends Component {
             onDelete={this.deleteContact}
           />
         )}
+        <GlobalStyle />
       </>
     );
   }
