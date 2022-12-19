@@ -16,13 +16,7 @@ body {
   background: rgb(251,241,254);
   background: linear-gradient(90deg, rgba(251,241,254,1) 50%, rgba(250,237,241,1) 100%);
 
-  
-}
 
-
-@import-normalize;
-body {
-  font-family: sans-serif;
   line-height: 1.5;
 }
 h1,
