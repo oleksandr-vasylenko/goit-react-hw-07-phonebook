@@ -1,4 +1,4 @@
-import { Contact } from './Contact';
+import { Contact } from '../Contacts/Contact';
 
 export const ContactsList = ({ items, onDelete }) => {
   return (
