@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Contact } from '../Contacts/Contact';
 import { ContactsThumb } from './ContactsList.Styled';
 
@@ -14,4 +15,9 @@ export const ContactsList = ({ items, onDelete }) => {
       ))}
     </ContactsThumb>
   );
+};
+
+ContactsList.propTypes = {
+  items: PropTypes.array,
+  onDelete: PropTypes.func,
 };
