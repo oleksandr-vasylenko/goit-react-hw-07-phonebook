@@ -21,7 +21,13 @@ export class ContactsForm extends Component {
           e.target.elements.name.value,
           e.target.elements.number.value
         );
+    e.target.elements.name.value = '';
+    e.target.elements.number.value = '';
   };
+
+  // reset = () => {
+  //   this.setState({ name: '', number: '' });
+  // };
 
   render() {
     return (
