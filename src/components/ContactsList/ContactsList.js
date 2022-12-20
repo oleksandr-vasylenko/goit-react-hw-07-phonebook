@@ -6,12 +6,14 @@ export const ContactsList = ({ items, onDelete }) => {
   return (
     <ContactsThumb>
       {items.map(item => (
-        <Contact
-          name={item.name}
-          number={item.number}
-          key={item.id}
-          onDelete={onDelete}
-        />
+        <li key={item.id}>
+          <Contact
+            contact={item}
+            onDelete={onDelete}
+            // name={item.name}
+            // number={item.number}
+          />
+        </li>
       ))}
     </ContactsThumb>
   );

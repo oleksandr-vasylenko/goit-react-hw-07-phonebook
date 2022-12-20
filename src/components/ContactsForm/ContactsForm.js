@@ -25,10 +25,6 @@ export class ContactsForm extends Component {
     e.target.elements.number.value = '';
   };
 
-  // reset = () => {
-  //   this.setState({ name: '', number: '' });
-  // };
-
   render() {
     return (
       <AddContactForm onSubmit={this.handleSubmit}>
