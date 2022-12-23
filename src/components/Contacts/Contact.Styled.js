@@ -7,7 +7,7 @@ export const ContactItem = styled.p`
   justify-content: space-between;
   gap: 12px;
   padding: 12px;
-  width: 100%;
+
   border-radius: 15px;
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;

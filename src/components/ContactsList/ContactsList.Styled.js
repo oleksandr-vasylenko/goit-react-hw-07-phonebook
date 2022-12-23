@@ -7,3 +7,7 @@ export const ContactsThumb = styled.ul`
   gap: 12px;
   margin-top: 16px;
 `;
+
+export const ContactsItem = styled.li`
+  width: 100%;
+`;

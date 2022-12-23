@@ -1,3 +1,3 @@
-goit-react-hw-02-components
+goit-react-hw-03-components
 
-- phonebook
+- phonebook with local storage included
