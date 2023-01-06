@@ -1,3 +1,3 @@
-goit-react-hw-03-components
+goit-react-hw-04-phonebook
 
-- phonebook with local storage included
+- phonebook refactored to hooks
