@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+// import { useState } from 'react';
 import {
   AddContactForm,
   InputField,
@@ -10,8 +10,15 @@ export const ContactsForm = ({ onSubmit, items }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    items.find(item => item.name === e.target.elements.name.value)
-      ? alert(`${e.target.elements.name.value} is already in contacts`)
+    items.find(
+      item =>
+        item.name.toLocaleLowerCase() ===
+          e.target.elements.name.value.toLocaleLowerCase() ||
+        item.number === e.target.elements.number.value
+    )
+      ? alert(
+          `${e.target.elements.name.value} or number is already in contacts`
+        )
       : onSubmit(e.target.elements.name.value, e.target.elements.number.value);
     e.target.elements.name.value = '';
     e.target.elements.number.value = '';
