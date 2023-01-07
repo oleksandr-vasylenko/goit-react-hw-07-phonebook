@@ -28,7 +28,6 @@ export const App = () => {
   }, [contacts]);
 
   const addContact = (name, number) => {
-    console.log(name, number);
     return setContacts(prevContacts => [
       ...prevContacts,
       { id: nanoid(), name, number },
