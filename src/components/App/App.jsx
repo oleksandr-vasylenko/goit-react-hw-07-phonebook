@@ -17,7 +17,6 @@ export const App = () => {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    // console.log('hello');
     const savedContacts = localStorage.getItem('contacts');
     if (savedContacts !== null) {
       setContacts(JSON.parse(savedContacts));
@@ -25,17 +24,21 @@ export const App = () => {
   }, []);
 
   useEffect(() => {
-    // console.log('hello');
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
+  // addContact = (name, number) => {
+  //   this.setState(prevState => ({
+  //     contacts: [...prevState.contacts, { id: nanoid(), name, number }],
+  //   }));
+  // };
+
   const addContact = (name, number) => {
-    // console.log('hello');
+    console.log(name, number);
     return setContacts(prevContacts => [
-      ...prevContacts.contacts,
+      ...prevContacts,
       { id: nanoid(), name, number },
     ]);
-    // console.log(name, number);
   };
 
   const typeFilter = e => {
@@ -49,7 +52,6 @@ export const App = () => {
   };
 
   const deleteContact = contactId => {
-    // console.log('hello');
     return setContacts(prevContacts =>
       prevContacts.filter(contact => contact.id !== contactId)
     );
