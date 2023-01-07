@@ -50,9 +50,9 @@ export const App = () => {
 
   const deleteContact = contactId => {
     // console.log('hello');
-    return setContacts(prevContacts => ({
-      contacts: prevContacts.filter(contact => contact.id !== contactId),
-    }));
+    return setContacts(prevContacts =>
+      prevContacts.filter(contact => contact.id !== contactId)
+    );
   };
 
   return (
