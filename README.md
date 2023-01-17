@@ -1,3 +1,3 @@
-goit-react-hw-04-phonebook
+goit-react-hw-06-phonebook
 
-- phonebook refactored to hooks
+- phonebook refactored on Redux / Redux Toolkit
