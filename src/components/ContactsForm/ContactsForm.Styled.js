@@ -14,8 +14,6 @@ export const AddContactForm = styled.form`
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 `;
 
-export const InputField = styled.input``;
-
 export const AddContactButton = styled.button`
   background-color: #ffffff;
   border: 0;

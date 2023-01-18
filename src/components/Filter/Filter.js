@@ -1,15 +1,23 @@
-import PropTypes from 'prop-types';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { contactFilter } from '../../redux/filterSlice';
+import { FilterThumb } from './Filter.Styled';
 
-export const Filter = ({ onType, value }) => {
+const ContactFilter = () => {
+  const dispatch = useDispatch();
+
   return (
-    <>
+    <FilterThumb>
+      <h2>Contacts</h2>
       <h3>Find contact by name</h3>
-      <input type="text" onChange={onType} value={value} />
-    </>
+      <input
+        onChange={e => dispatch(contactFilter(e.currentTarget.value))}
+        type="text"
+        name="filter"
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+      />
+    </FilterThumb>
   );
 };
 
-Filter.propTypes = {
-  onType: PropTypes.func,
-  value: PropTypes.string,
-};
+export default ContactFilter;
