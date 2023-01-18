@@ -5,6 +5,8 @@ import { ContactsForm } from '../ContactsForm/ContactsForm';
 import { ContactsList } from '../ContactsList/ContactsList';
 import { Filter } from 'components/Filter/Filter';
 import { Thumb } from './App.Styled';
+// import { useSelector, useDispatch } from 'react-redux';
+import { addContact, removeContact, findContact } from '../../redux/store';
 
 export const App = () => {
   const [contacts, setContacts] = useState([
