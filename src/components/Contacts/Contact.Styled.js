@@ -13,6 +13,10 @@ export const ContactsItem = styled.li`
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 `;
 
+export const ContactText = styled.p`
+  font-weight: 400;
+`;
+
 export const DeleteContactBtn = styled.button`
   background-color: #ffffff;
   border: 0;
