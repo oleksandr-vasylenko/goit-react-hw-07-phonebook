@@ -1,8 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { ContactsThumb } from './ContactsList.Styled';
-import { Contact } from 'components/Contacts/Contact';
+import {
+  ContactsList,
+  ContactsItem,
+  ContactText,
+  DeleteContactBtn,
+} from './ContactsList.Styled';
+import { deleteContact } from '../../redux/contactSlice';
 
 const ContactList = () => {
   const filter = useSelector(state => state.filter.filter);
@@ -13,11 +18,21 @@ const ContactList = () => {
   });
 
   return (
-    <ContactsThumb>
+    <ContactsList>
       {renderContacts.map(({ id, name, number }) => (
-        <Contact key={id} name={name} number={number} dispatch={dispatch} />
+        <ContactsItem key={id}>
+          <ContactText>
+            {name}: {number}
+          </ContactText>
+          <DeleteContactBtn
+            type="button"
+            onClick={() => dispatch(deleteContact(id))}
+          >
+            X
+          </DeleteContactBtn>
+        </ContactsItem>
       ))}
-    </ContactsThumb>
+    </ContactsList>
   );
 };
 
