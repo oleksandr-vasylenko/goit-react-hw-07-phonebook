@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AddContactForm = styled.form`
+export const NewContactForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;

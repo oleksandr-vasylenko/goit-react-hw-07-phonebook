@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { addContact } from '../../redux/contactSlice';
-import { AddContactForm, AddContactButton } from './ContactsForm.Styled';
+import { NewContactForm, AddContactButton } from './ContactsForm.Styled';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -47,7 +47,7 @@ const ContactForm = () => {
   return (
     <>
       <h1>Phonebook</h1>
-      <AddContactForm onSubmit={onFormSubmit}>
+      <NewContactForm onSubmit={onFormSubmit}>
         <input
           onChange={onFormInput}
           type="text"
@@ -69,7 +69,7 @@ const ContactForm = () => {
         ></input>
 
         <AddContactButton type="submit">Add Contact</AddContactButton>
-      </AddContactForm>
+      </NewContactForm>
     </>
   );
 };
