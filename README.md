@@ -1,3 +1,3 @@
-goit-react-hw-06-phonebook
+goit-react-hw-07-phonebook
 
-- phonebook refactored on Redux / Redux Toolkit
+- Phonebook - refactored to async redux
