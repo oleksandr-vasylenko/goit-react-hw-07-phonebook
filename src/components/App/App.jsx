@@ -24,12 +24,14 @@ export const App = () => {
       <h1>Phonebook</h1>
       <ContactsForm />
       {isLoading && !error && <b>Request in progress...</b>}
-      {contactList.length > 0 && (
+      {contactList.length > 0 ? (
         <>
           <h2>Contacts</h2>
           <Filter />
           <ContactsList />
         </>
+      ) : (
+        <p>You don't have any contacts here, add a new one...</p>
       )}
       <GlobalStyle />
     </Thumb>

@@ -14,7 +14,7 @@ export const Filter = () => {
 
   return (
     <FilterThumb>
-      <h3>Find contacts by name</h3>
+      <h3>Find contact by name</h3>
       <input value={filter} type="text" onChange={handleUpdate} />
     </FilterThumb>
   );
