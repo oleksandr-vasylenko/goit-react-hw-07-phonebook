@@ -43,7 +43,7 @@ export const ContactsForm = () => {
       <input
         type="tel"
         name="number"
-        placeholder="Number"
+        placeholder="Phone"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         value={phone}
@@ -51,7 +51,9 @@ export const ContactsForm = () => {
         required
       />
 
-      <AddContactButton type="submit" value="Add contact" />
+      <AddContactButton type="submit" value="Add contact">
+        Add Contact
+      </AddContactButton>
     </Form>
   );
 };
