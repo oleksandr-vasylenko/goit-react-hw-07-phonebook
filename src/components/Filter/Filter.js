@@ -1,23 +1,21 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { contactFilter } from '../../redux/filterSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { filterContacts } from 'redux/filterSlice';
+import { selectFilter } from 'redux/selectors';
 import { FilterThumb } from './Filter.Styled';
 
-const ContactFilter = () => {
+export const Filter = () => {
   const dispatch = useDispatch();
+  const filter = useSelector(selectFilter);
+
+  function handleUpdate(evt) {
+    const query = evt.target.value;
+    dispatch(filterContacts(query));
+  }
 
   return (
     <FilterThumb>
-      <h2>Contacts</h2>
-      <h3>Find contact by name</h3>
-      <input
-        onChange={e => dispatch(contactFilter(e.currentTarget.value))}
-        type="text"
-        name="filter"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-      />
+      <h3>Find contacts by name</h3>
+      <input value={filter} type="text" onChange={handleUpdate} />
     </FilterThumb>
   );
 };
-
-export default ContactFilter;
