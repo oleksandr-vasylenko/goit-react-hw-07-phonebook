@@ -1,11 +1,13 @@
-import { ContactsForm } from 'components/ContactsForm/ContactsForm';
-import { GlobalStyle } from '../../GlobalStyle';
-import { ContactsList } from 'components/ContactsList/ContactsList';
-import { Filter } from 'components/Filter/Filter';
-
-import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
+
+import { GlobalStyle } from '../../GlobalStyle';
+
+import { ContactsForm } from 'components/ContactsForm/ContactsForm';
+import { Filter } from 'components/Filter/Filter';
+import { ContactsList } from 'components/ContactsList/ContactsList';
+
 import { fetchContacts } from 'redux/operations';
 import { Thumb } from './App.Styled';
 

@@ -7,8 +7,8 @@ export const Filter = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
 
-  function handleUpdate(evt) {
-    const query = evt.target.value;
+  function handleUpdate(e) {
+    const query = e.target.value;
     dispatch(filterContacts(query));
   }
 
